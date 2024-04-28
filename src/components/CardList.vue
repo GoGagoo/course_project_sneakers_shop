@@ -15,6 +15,7 @@ defineProps({
       :price="item.price"
       :imgUrl="item.imageUrl"
       :onClickAdd="onClickAdd"
+      :isFavorite="item.isFavorite"
     />
   </div>
 </template>
