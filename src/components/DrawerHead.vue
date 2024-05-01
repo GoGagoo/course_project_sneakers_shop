@@ -1,3 +1,9 @@
+<script setup>
+import { inject } from 'vue'
+
+  const { closeDrawer }= inject('cartActions', )
+</script>
+
 <template>
   <div class="gap-5 flex items-center mb-8">
     <svg
@@ -7,6 +13,7 @@
       viewBox="0 0 16 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      @click="closeDrawer()"
     >
       <path
         d="M1 7H14.7143"

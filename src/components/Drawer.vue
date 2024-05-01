@@ -1,12 +1,13 @@
 <script setup>
 import CardItemList from './CartItemList.vue'
 import DrawerHead from './DrawerHead.vue'
+// overflow-y-auto for 2nd class 
 </script>
 
 <template>
   <div class="fixed z-10 top-0 h-full w-full bg-black opacity-70" />
   <div
-    class="flex flex-col justify-between fixed z-10 top-0 h-full right-0 w-96 bg-white px-10 py-7 overflow-y-auto"
+    class="flex flex-col justify-between fixed z-10 top-0 h-full right-0 w-96 bg-white px-10 py-7"
   >
     <DrawerHead />
     <CardItemList />
