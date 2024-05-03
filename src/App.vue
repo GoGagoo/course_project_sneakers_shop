@@ -10,6 +10,13 @@ const isCreatingOrder = ref(false)
 
 const drawerOpen = ref(false)
 
+const totalPrice = computed(() => cart.value.reduce((acc, item) => acc + item.price, 0))
+const VatPrice = computed(() => Math.round((totalPrice.value * 5) / 100))
+
+const cartIsEmpty = computed(() => cart.value.length === 0)
+
+const cartButtonDisabled = computed(() => isCreatingOrder.value || cartIsEmpty.value)
+
 const closeDrawer = () => {
   drawerOpen.value = false
 }
@@ -17,13 +24,6 @@ const closeDrawer = () => {
 const openDrawer = () => {
   drawerOpen.value = true
 }
-
-const totalPrice = computed(() => cart.value.reduce((acc, item) => acc + item.price, 0))
-const VatPrice = computed(() => Math.round((totalPrice.value * 5) / 100))
-
-const cartIsEmpty = computed(() => cart.value.length === 0)
-
-const cartButtonDisabled = computed(() => isCreatingOrder.value || cartIsEmpty.value)
 
 const addToCart = (item) => {
   cart.value.push(item)
@@ -82,8 +82,7 @@ provide('cart', {
     <Header :total-price="totalPrice" @open-drawer="openDrawer" />
 
     <div class="p-10">
-      <router-view>
-      </router-view>
+      <router-view> </router-view>
     </div>
   </div>
 </template>

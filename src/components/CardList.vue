@@ -1,9 +1,9 @@
 <script setup>
-import { defineEmits } from 'vue'
 import Card from './Card.vue'
 
 defineProps({
-  items: Array
+  items: Array,
+  isFavorites: Boolean
 })
 
 const emit = defineEmits(['addToFavorite', 'addToCart'])
@@ -18,8 +18,8 @@ const emit = defineEmits(['addToFavorite', 'addToCart'])
       :title="item.title"
       :price="item.price"
       :imageUrl="item.imageUrl"
-      :onClickFavorite="() => emit('addToFavorite', item)"
-      :onClickAdd="() => emit('addToCart', item)"
+      :onClickFavorite="isFavorites ? null : () => emit('addToFavorite', item)"
+      :onClickAdd="isFavorites ? null : () => emit('addToCart', item)"
       :isFavorite="item.isFavorite"
       :isAdded="item.isAdded"
     />
