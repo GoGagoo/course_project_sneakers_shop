@@ -1,6 +1,4 @@
 <script setup>
-import { defineEmits } from 'vue'
-
 const emit = defineEmits(['openDrawer'])
 
 defineProps({
@@ -31,11 +29,6 @@ defineProps({
           <span>Закладки</span>
         </li>
       </router-link>
-
-      <li class="flex items-center gap-3 cursor-pointer">
-        <img src="/profile.svg" alt="Favorite" />
-        <span>Профиль</span>
-      </li>
     </ul>
   </header>
 </template>
