@@ -12,7 +12,7 @@ defineProps({
       <div class="flex items-center gap-4">
         <img src="/logo.png" alt="Logo" class="w-11" />
         <div>
-          <h2 class="font-bold text-xl uppercase">Vue Sneakers</h2>
+          <h2 class="font-bold text-xl uppercase hover:text-slate-600 transition">Vue Sneakers</h2>
           <p class="text-slate-400">Магазин лучших кроссовок</p>
         </div>
       </div>
@@ -21,12 +21,12 @@ defineProps({
     <ul class="flex items-center gap-10">
       <li @click="() => emit('openDrawer')" class="flex items-center gap-3 cursor-pointer">
         <img src="/cart.svg" alt="Cart" />
-        <b>{{ totalPrice }} руб.</b>
+        <b class="hover:text-slate-500 transition">{{ totalPrice }} руб.</b>
       </li>
       <router-link to="/favorites">
         <li class="flex items-center gap-3 cursor-pointer">
           <img src="/heart.svg" alt="Favorite" />
-          <span>Закладки</span>
+          <span class="hover:text-slate-500 transition">Закладки</span>
         </li>
       </router-link>
     </ul>
