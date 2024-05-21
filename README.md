@@ -1,4 +1,4 @@
-# GoGagoo Portfolio v.2.
+# Vue Sneakers
 
 ![cp-vue-sneakers-shop](https://i.postimg.cc/Wb0cXY5q/45shots-so.jpg)
 
